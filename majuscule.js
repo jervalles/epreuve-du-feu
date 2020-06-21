@@ -2,6 +2,7 @@ let arg = process.argv[2]
 
 function majuscule(arg) {
     let text = arg.split('')
+    let results = ''
 
     for (let i = 0, k = 0; i < text.length; i++) {
         if (text[i] == ' ') {
@@ -16,7 +17,8 @@ function majuscule(arg) {
             text[i] = text[i].toLowerCase()
         }
     }
-    console.log(text.join(''))
+    results = text.join('')
+    console.log(results)
 }
 
 majuscule(arg)
