@@ -1,15 +1,23 @@
-const argument = process.argv[2]
+let argument = process.argv[2]
 
-console.log("Lancement de la fonction escalier")
+if (typeof argument === "string") {
+    argument = parseInt(argument)
+}
+
+let espace = ''
+let line = ''
 
 function escalier(argument) {
-    let marche = ''
     for (let i = 0; i < argument; i++) {
-        marche = marche.concat('', '#')
-        console.log(marche)
+        espace = argument - i - 1
+        line = " ".repeat(espace) + "#".repeat(i + 1)
+        console.log(line)
     }
 }
 
-escalier(argument)
-
-/* pour lancer la fonction dans le shell : node escalier.js 20 */
+if (argument <= 0 || typeof argument !== "number") {
+    console.log("L'argument doit être un nombre supérieur à zero")
+} else {
+    console.log("Lancement de la fonction escalier")
+    escalier(argument)
+}
