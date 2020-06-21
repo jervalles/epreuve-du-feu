@@ -1,11 +1,12 @@
 let arg = process.argv[2]
 
 function facto(arg) {
-    let result = 1
-    for (let i = arg; i > 0; i--) {
-        result = result * i
+    
+    if (arg <= 1) {
+        return 1
+    } else {
+        return arg * facto(arg-1)
     }
-    console.log(result)
 }
 
-facto(arg)
+console.log(facto(arg))
